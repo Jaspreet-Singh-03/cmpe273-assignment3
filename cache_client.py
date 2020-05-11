@@ -72,13 +72,13 @@ def process(udp_clients):
             lru_cache_put(key,data_bytes)
         print(response)
 
-    # for hc in hash_codes:
-    #     data_bytes, key = delete(hc)
-    #     if data_bytes is not None:
-    #         response = client_ring.get_node(key).send(data_bytes)
-    #     else:
-    #         response = "Key not Present"
-    #     print(response)
+    for hc in hash_codes:
+        data_bytes, key = delete(hc)
+        if data_bytes is not None:
+            response = client_ring.get_node(key).send(data_bytes)
+        else:
+            response = "Key not Present"
+        print(response)
 
 if __name__ == "__main__":
     clients = [
