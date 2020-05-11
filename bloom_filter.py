@@ -29,6 +29,3 @@ class BloomFilter(object):
             if self.bitArray[location]==0:
                     return False
         return True
-
-bf = BloomFilter(1000000,0.08)
-print(bf.array_size)
